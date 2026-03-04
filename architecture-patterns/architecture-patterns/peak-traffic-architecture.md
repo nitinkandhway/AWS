@@ -128,6 +128,7 @@ Established repeatable process for future high-traffic events
 ↓
 ## Amazon RDS (via RDS Proxy)
 
+<img width="500" height="262" alt="image" src="https://github.com/user-attachments/assets/aac3d63a-ad59-47f1-8a04-df271533cbd4" />
 
 #### Static Assets → Amazon S3 → CloudFront
 
