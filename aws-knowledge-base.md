@@ -1,3 +1,9 @@
+Architecting for Peak Traffic Events
+
+When designing an application for a high-traffic business event (e.g., Black Friday, Diwali sale, product launch), my goal is not just auto scaling — but predictable scalability, resilience, and controlled performance under burst load.
+
+A basic setup with EC2 in an Auto Scaling Group behind a Load Balancer is expected. However, for extreme traffic spikes, I would go beyond reactive scaling.
+
 Handling high-traffic events requires proactive capacity planning, bottleneck elimination, and resilience validation, not just reactive auto scaling.
 
 1️⃣ Compute Layer Strategy
