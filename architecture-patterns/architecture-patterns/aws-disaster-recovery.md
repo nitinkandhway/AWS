@@ -39,6 +39,9 @@ Disaster Recovery Maturity Model
 
 Disaster Recovery strategies typically fall into four models, increasing in cost and decreasing in recovery time.
 
+<img width="470" height="188" alt="image" src="https://github.com/user-attachments/assets/3a126013-f0de-42a8-b41b-91334b002ca1" />
+
+
 ## Backup & Restore
 🔹 RPO / RTO: Hours
 
