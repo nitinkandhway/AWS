@@ -1,8 +1,6 @@
-# Architecting for Peak Traffic and High Availability
-
 Handling high-traffic events requires proactive capacity planning, bottleneck elimination, and resilience validation, not just reactive auto scaling.
 
-#1️ Compute Layer Strategy
+1️⃣ Compute Layer Strategy
 What is your compute scaling approach?
 
 Deploy application instances in an Auto Scaling Group (ASG).
@@ -15,7 +13,7 @@ Ensure instances are fully initialized and passing health checks before the even
 
 Reactive scaling alone may not keep up with rapid burst traffic. Pre-scaling ensures predictable performance.
 
-#2️ Load Balancer Readiness
+2️⃣ Load Balancer Readiness
 How do you ensure the Load Balancer handles sudden spikes?
 
 Pre-warm the Application Load Balancer (ALB) if expecting extreme traffic.
@@ -26,7 +24,7 @@ Ensure connection draining is properly configured.
 
 For mission-critical events, engage AWS Infrastructure Event Management (IEM) to simulate expected load in advance.
 
-#3️ AMI and Instance Optimization
+3️⃣ AMI and Instance Optimization
 How do you reduce instance launch latency?
 
 Use pre-baked, lightweight Amazon Machine Images (AMIs).
@@ -39,7 +37,7 @@ Ensure application is optimized for fast startup.
 
 The faster instances become healthy, the more effective scaling becomes.
 
-#4️ Database Protection Strategy
+4️⃣ Database Protection Strategy
 How do you prevent database overload?
 
 High traffic often leads to excessive database connections.
@@ -56,7 +54,7 @@ Monitor DB metrics via Amazon CloudWatch.
 
 RDS Proxy prevents orphaned connections and efficiently reuses pooled connections.
 
-#5️ Caching and Edge Optimization
+5️⃣ Caching and Edge Optimization
 How do you reduce backend pressure?
 
 Use Amazon ElastiCache (Redis) for frequently accessed data.
@@ -69,7 +67,7 @@ Offload session storage to distributed cache instead of EC2 memory.
 
 This reduces compute and database load significantly.
 
-#6️ Microservices & Independent Scaling
+6️⃣ Microservices & Independent Scaling
 Why is microservices architecture beneficial during traffic spikes?
 
 Each service can scale independently.
@@ -88,7 +86,7 @@ Horizontal Pod Autoscaler (HPA)
 
 Cluster Autoscaler
 
-#7️ Serverless Considerations
+7️⃣ Serverless Considerations
 Does serverless automatically solve scaling?
 
 No. Serverless also has limits.
@@ -111,7 +109,7 @@ Use On-Demand mode or provisioned auto scaling.
 
 Understanding scaling limits is critical.
 
-#8️ Resilience and Testing
+8️⃣ Resilience and Testing
 How do you validate readiness before the event?
 
 Perform load testing using tools like distributed load generators.
@@ -130,7 +128,7 @@ Lambda concurrency
 
 RDS connections
 
-#9️ Monitoring & Incident Preparedness
+9️⃣ Monitoring & Incident Preparedness
 How do you monitor during the event?
 
 Track:
