@@ -1,19 +1,20 @@
-Architecting for Peak Traffic Events on AWS
-Problem Statement
+# Architecting for Peak Traffic Events on AWS
+## Problem Statement
 
 The application must handle extremely high traffic during major business events (e.g., sales campaigns, product launches) without performance degradation, outages, or database failures.
 
-Objective
+## Objective
 
 Design and implement a scalable, resilient, and proactively optimized AWS architecture capable of handling sudden traffic spikes while maintaining availability, performance, and cost efficiency.
 
 Scalability Strategy (STAR Method)
-Situation
+
+## Situation
 
 The application runs on AWS and serves regular daily traffic successfully.
 However, during high-demand events, traffic can increase multiple times within minutes, potentially overwhelming compute, load balancers, or the database layer.
 
-Task
+## Task
 
 Design an architecture that ensures:
 
@@ -27,11 +28,11 @@ Controlled scaling behavior
 
 Operational readiness before peak events
 
-Action
+## Action
 
 The following architect-level approach was implemented:
 
-1. Compute Layer Scaling
+## 1. Compute Layer Scaling
 
 Deployed EC2 instances in an Auto Scaling Group (ASG)
 
@@ -43,7 +44,7 @@ Used optimized, lightweight AMIs to reduce instance launch time
 
 Validated health checks and instance warm-up settings
 
-2. Load Balancer & Capacity Readiness
+## 2. Load Balancer & Capacity Readiness
 
 Ensured ALB capacity planning for sudden bursts
 
@@ -53,7 +54,7 @@ Engaged AWS Infrastructure Event Management (IEM) for critical events
 
 Conducted load testing prior to traffic surge
 
-3. Database Protection Strategy
+## 3. Database Protection Strategy
 
 Implemented Amazon RDS Proxy for connection pooling
 
@@ -65,7 +66,7 @@ Optimized indexing and query performance
 
 This prevented database connection storms and resource exhaustion.
 
-4. Caching & Edge Optimization
+## 4. Caching & Edge Optimization
 
 Deployed Amazon ElastiCache (Redis) for frequently accessed data
 
@@ -75,7 +76,7 @@ Used Amazon CloudFront to offload backend traffic
 
 Reduced direct database and compute dependency
 
-5. Microservices & Independent Scaling
+## 5. Microservices & Independent Scaling
 
 Architected services to scale independently where possible
 
@@ -83,7 +84,7 @@ Allowed high-demand APIs to scale more aggressively
 
 Prevented unnecessary full-stack scaling
 
-6. Observability & Monitoring
+## 6. Observability & Monitoring
 
 Configured Amazon CloudWatch dashboards and alarms
 
@@ -99,7 +100,7 @@ Database connections
 
 Prepared incident response procedures for event window
 
-Result
+# Result
 
 Application handled peak traffic without downtime
 
@@ -111,27 +112,28 @@ Increased architectural resilience and scalability maturity
 
 Established repeatable process for future high-traffic events
 
-Architecture Overview
+# Architecture Overview
 
-Users
+## Users
 ↓
-Amazon Route 53
+## Amazon Route 53
 ↓
-Amazon CloudFront
+## Amazon CloudFront
 ↓
-Application Load Balancer (ALB)
+## Application Load Balancer (ALB)
 ↓
-Auto Scaling Group (EC2 Instances)
+## Auto Scaling Group (EC2 Instances)
 ↓
-Amazon ElastiCache (Redis)
+## Amazon ElastiCache (Redis)
 ↓
-Amazon RDS (via RDS Proxy)
+## Amazon RDS (via RDS Proxy)
 
-Static Assets → Amazon S3 → CloudFront
 
-Monitoring → Amazon CloudWatch
+#### Static Assets → Amazon S3 → CloudFront
 
-Key Learnings
+#### Monitoring → Amazon CloudWatch
+
+# Key Learnings
 
 Reactive scaling alone is insufficient for burst traffic
 
