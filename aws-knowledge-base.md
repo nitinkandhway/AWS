@@ -169,18 +169,10 @@ Performing structured load testing
 
 A mature architecture anticipates traffic patterns and prepares infrastructure accordingly, rather than relying solely on automatic scaling mechanisms.
 
-Users
-   ↓
-Amazon Route 53
-   ↓
-Amazon CloudFront (CDN)
-   ↓
-Application Load Balancer (ALB)
-   ↓
-Auto Scaling Group (EC2 Instances / Containers)
-   ↓
-Amazon ElastiCache (Redis)
-   ↓
-Amazon RDS (via RDS Proxy)
-   ↓
-Amazon S3 (Static Assets)
+
+
++++++++++++++++++++++++++++++
+
+Users → Edge → Load Balancing → Compute → Cache → Database → Storage
+
+
